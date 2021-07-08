@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="dp_16">16dp</dimen>
+
+    <dimen name="dp_240">240dp</dimen>
+    <dimen name="dp_224">224dp</dimen>
+
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+
+    <!-- Main Activity -->
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_158">158dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_42">42dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+
+    <!-- Setting Activity -->
+    <dimen name="dp_56">56dp</dimen>
+    <dimen name="dp_27">27dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_14">14dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="setting_resolution_item_border">2px</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="setting_divider_height">3px</dimen>
+    <dimen name="dp_54">54dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+
+    <!-- Live Activity -->
+    <dimen name="dp_76">76dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_186">186dp</dimen>
+    <dimen name="dp_44">44dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_68">68dp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+
+    <!-- Role Select Activity -->
+    <dimen name="dp_342">342dp</dimen>
+    <dimen name="dp_128">128dp</dimen>
+    <dimen name="dp_137">137dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+</resources>
