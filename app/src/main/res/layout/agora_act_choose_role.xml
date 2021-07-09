@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/agora_bg_main"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/role_choose_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="@dimen/dp_24"
+        android:text="@string/select_role_title"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_18" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_broadcaster"
+        android:layout_width="@dimen/dp_342"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@drawable/select_role_block_bg">
+
+        <ImageView
+            android:id="@+id/iv_select_role_icon_broadcaster"
+            style="@style/select_role_block_icon"
+            android:contentDescription="@string/placeholder"
+            android:src="@drawable/ic_role_broadcaster"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_select_role_title_broadcaster"
+            style="@style/select_role_block_title"
+            android:layout_marginStart="@dimen/dp_48"
+            android:text="@string/select_role_broadcaster"
+            app:layout_constraintBottom_toTopOf="@id/tv_select_role_hint_broadcaster"
+            app:layout_constraintStart_toEndOf="@id/iv_select_role_icon_broadcaster"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_select_role_hint_broadcaster"
+            style="@style/select_role_block_hint"
+            android:text="@string/select_role_broadcaster_hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_select_role_title_broadcaster"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_role_title_broadcaster" />
+
+        <ImageView
+            style="@style/select_role_block_arrow"
+            android:contentDescription="@string/placeholder"
+            app:layout_constraintEnd_toEndOf="@id/tv_select_role_hint_broadcaster"
+            app:layout_constraintTop_toTopOf="@id/tv_select_role_title_broadcaster" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_audience"
+        android:layout_width="@dimen/dp_342"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@drawable/select_role_block_bg">
+
+        <ImageView
+            android:id="@+id/iv_select_role_icon_audience"
+            style="@style/select_role_block_icon"
+            android:contentDescription="@string/placeholder"
+            android:src="@drawable/ic_role_audience"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_select_role_title_audience"
+            style="@style/select_role_block_title"
+            android:layout_marginStart="@dimen/dp_48"
+            android:text="@string/select_role_audience"
+            app:layout_constraintBottom_toTopOf="@id/tv_select_role_hint_audience"
+            app:layout_constraintStart_toEndOf="@id/iv_select_role_icon_audience"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_select_role_hint_audience"
+            style="@style/select_role_block_hint"
+            android:text="@string/select_role_audience_hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_select_role_title_audience"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_role_title_audience" />
+
+        <ImageView
+            android:id="@+id/iv_select_role_arrow_audience"
+            style="@style/select_role_block_arrow"
+            android:contentDescription="@string/placeholder"
+            app:layout_constraintEnd_toEndOf="@id/tv_select_role_hint_audience"
+            app:layout_constraintTop_toTopOf="@id/tv_select_role_title_audience" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

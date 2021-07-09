@@ -1,93 +1,55 @@
-package io.agora.openlive.ui;
+package io.agora.openlive.ui
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import io.agora.openlive.AgoraConstant.VIDEO_DIMENSIONS
+import io.agora.openlive.R
+import java.util.*
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+class ResolutionAdapter(private val mContext: Context, var selected: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-import java.util.ArrayList;
-
-import io.agora.openlive.Constants;
-import io.agora.openlive.R;
-import io.agora.rtc.video.VideoEncoderConfiguration;
-
-public class ResolutionAdapter extends RecyclerView.Adapter {
-    private Context mContext;
-    private int mSelected;
-    private ArrayList<ResolutionItem> mItems = new ArrayList<>();
-
-    public ResolutionAdapter(Context context, int selected) {
-        mContext = context;
-        mSelected = selected;
-        initData(context);
-    }
-
-    private void initData(Context context) {
-        int size = Constants.INSTANCE.getVIDEO_DIMENSIONS().length;
-        String[] labels = context.getResources().
-                getStringArray(R.array.string_array_resolutions);
-
-        for (int i = 0; i < size; i++) {
-            ResolutionItem item = new ResolutionItem(labels[i],Constants.INSTANCE.getVIDEO_DIMENSIONS()[i]);
-            mItems.add(item);
+    private val mItems = ArrayList<ResolutionItem>()
+    private fun initData(context: Context) {
+        val size: Int = VIDEO_DIMENSIONS.size
+        val labels = context.resources.getStringArray(R.array.string_array_resolutions)
+        for (i in 0 until size) {
+            val item = ResolutionItem(labels[i])
+            mItems.add(item)
         }
     }
 
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).
-                inflate(R.layout.dimension_item, parent, false);
-        return new ResolutionHolder(view);
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val view = LayoutInflater.from(mContext).inflate(R.layout.agora_item_resolution, parent, false)
+        return ResolutionHolder(view)
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
-        ResolutionItem item = mItems.get(position);
-        TextView content = ((ResolutionHolder) holder).resolution;
-        content.setText(item.label);
-
-        content.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mSelected = position;
-                notifyDataSetChanged();
-            }
-        });
-
-        if (position == mSelected) content.setSelected(true);
-        else content.setSelected(false);
-    }
-
-    @Override
-    public int getItemCount() {
-        return mItems.size();
-    }
-
-    public class ResolutionHolder extends RecyclerView.ViewHolder {
-        TextView resolution;
-
-        ResolutionHolder(View itemView) {
-            super(itemView);
-            resolution = itemView.findViewById(R.id.resolution);
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val item = mItems[position]
+        val content = (holder as ResolutionHolder).resolution
+        content.text = item.label
+        content.setOnClickListener {
+            selected = position
+            notifyDataSetChanged()
         }
+        content.isSelected = position == selected
     }
 
-    public int getSelected() {
-        return mSelected;
+    override fun getItemCount(): Int {
+        return mItems.size
     }
 
-    private static class ResolutionItem {
-        String label;
-        VideoEncoderConfiguration.VideoDimensions dimension;
+    inner class ResolutionHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var resolution: TextView = itemView.findViewById(R.id.resolution)
 
-        ResolutionItem(String label, VideoEncoderConfiguration.VideoDimensions dimension) {
-            this.label = label;
-            this.dimension = dimension;
-        }
+    }
+
+    private class ResolutionItem(var label: String)
+
+    init {
+        initData(mContext)
     }
 }

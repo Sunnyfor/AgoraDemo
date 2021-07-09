@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="private_app_id" translatable="false">c4eb7402025a42618b34a84f18dd675c</string>
-    <string name="private_access_token" translatable="false">006c4eb7402025a42618b34a84f18dd675cIABXoorxr5brRHRTUjIB2C+SXTwFT004jfBwUjACRyC2XfST2vUAAAAAEAA5wuE0n6/mYAEAAQCer+Zg</string>
+    <string name="private_access_token" translatable="false">
+        006c4eb7402025a42618b34a84f18dd675cIADMwjZkOfGdcI+AyF8hQh62puR5eU2j4OT3sLS+/rYxyfST2vUAAAAAEABsKo0tRiHoYAEAAQBEIehg
+    </string>
 </resources>

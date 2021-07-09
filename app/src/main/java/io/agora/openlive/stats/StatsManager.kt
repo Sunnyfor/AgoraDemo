@@ -1,78 +1,68 @@
-package io.agora.openlive.stats;
+package io.agora.openlive.stats
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import io.agora.rtc.Constants
+import java.util.*
 
-import io.agora.rtc.Constants;
+/**
+ * Desc 数据管理类
+ * Author ZY
+ * Mail zuoyu98@foxmail.com
+ * Date 2021年7月9日 21:36:05
+ */
+class StatsManager {
+    private val mUidList: MutableList<Int> = ArrayList()
+    private val mDataMap: MutableMap<Int, StatsData> = HashMap()
+    var isEnabled = false
+        private set
 
-public class StatsManager {
-    private List<Integer> mUidList = new ArrayList<>();
-    private Map<Integer, StatsData> mDataMap = new HashMap<>();
-    private boolean mEnable = false;
-
-    public void addUserStats(int uid, boolean ifLocal) {
+    fun addUserStats(uid: Int, ifLocal: Boolean) {
         if (mUidList.contains(uid) && mDataMap.containsKey(uid)) {
-            return;
+            return
         }
-
-        StatsData data = ifLocal
-                ? new LocalStatsData()
-                : new RemoteStatsData();
+        val data = if (ifLocal) LocalStatsData() else RemoteStatsData()
         // in case 32-bit unsigned integer uid is received
-        data.setUid(uid & 0xFFFFFFFFL);
-
-        if (ifLocal) mUidList.add(0, uid);
-        else mUidList.add(uid);
-
-        mDataMap.put(uid, data);
-    }
-
-    public void removeUserStats(int uid) {
-        if (mUidList.contains(uid) && mDataMap.containsKey(uid)) {
-            mUidList.remove((Integer) uid);
-            mDataMap.remove(uid);
-        }
-    }
-
-    public StatsData getStatsData(int uid) {
-        if (mUidList.contains(uid) && mDataMap.containsKey(uid)) {
-            return mDataMap.get(uid);
+        data.uid = (uid and 0xFFFFFFFFL.toInt()).toLong()
+        if (ifLocal) {
+            mUidList.add(0, uid)
         } else {
-            return null;
+            mUidList.add(uid)
+        }
+        mDataMap[uid] = data
+    }
+
+    fun removeUserStats(uid: Int) {
+        if (mUidList.contains(uid) && mDataMap.containsKey(uid)) {
+            mUidList.remove(uid)
+            mDataMap.remove(uid)
         }
     }
 
-    public String qualityToString(int quality) {
-        switch (quality) {
-            case Constants.QUALITY_EXCELLENT:
-                return "Exc";
-            case Constants.QUALITY_GOOD:
-                return "Good";
-            case Constants.QUALITY_POOR:
-                return "Poor";
-            case Constants.QUALITY_BAD:
-                return "Bad";
-            case Constants.QUALITY_VBAD:
-                return "VBad";
-            case Constants.QUALITY_DOWN:
-                return "Down";
-            default:
-                return "Unk";
+    fun getStatsData(uid: Int): StatsData? {
+        return if (mUidList.contains(uid) && mDataMap.containsKey(uid)) {
+            mDataMap[uid]
+        } else {
+            null
         }
     }
 
-    public void enableStats(boolean enabled) {
-        mEnable = enabled;
+    fun qualityToString(quality: Int): String {
+        return when (quality) {
+            Constants.QUALITY_EXCELLENT -> "Exc"
+            Constants.QUALITY_GOOD -> "Good"
+            Constants.QUALITY_POOR -> "Poor"
+            Constants.QUALITY_BAD -> "Bad"
+            Constants.QUALITY_VBAD -> "VBad"
+            Constants.QUALITY_DOWN -> "Down"
+            else -> "Unk"
+        }
     }
 
-    public boolean isEnabled() {
-        return mEnable;
+    fun enableStats(enabled: Boolean) {
+        isEnabled = enabled
     }
 
-    public void clearAllData() {
-        mUidList.clear();
-        mDataMap.clear();
+    fun clearAllData() {
+        mUidList.clear()
+        mDataMap.clear()
     }
 }

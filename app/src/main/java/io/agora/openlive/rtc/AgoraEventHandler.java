@@ -1,7 +1,5 @@
 package io.agora.openlive.rtc;
 
-import android.graphics.PixelFormat;
-
 import java.util.ArrayList;
 
 import io.agora.rtc.IRtcEngineEventHandler;
@@ -90,14 +88,14 @@ public class AgoraEventHandler extends IRtcEngineEventHandler {
     @Override
     public void onLastmileQuality(int quality) {
         for (EventHandler handler : mHandler) {
-            handler.onLastmileQuality(quality);
+            handler.onLastMileQuality(quality);
         }
     }
 
     @Override
     public void onLastmileProbeResult(IRtcEngineEventHandler.LastmileProbeResult result) {
         for (EventHandler handler : mHandler) {
-            handler.onLastmileProbeResult(result);
+            handler.onLastMileProbeResult(result);
         }
     }
 }

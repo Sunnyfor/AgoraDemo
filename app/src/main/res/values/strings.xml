@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+
     <string name="app_name" translatable="false">Open Live</string>
+    <string name="placeholder" translatable="false">占位符</string>
 
     <!-- Main Activity -->
-    <string name="start_broadcast_title">Start Live Streaming</string>
-    <string name="topic_edit_hint">Enter a channel name</string>
-    <string name="powered_by_agora" translatable="false">Powered by agora.io</string>
-    <string name="need_necessary_permissions">Necessary permissions acquired</string>
+    <string name="start_broadcast_title">开始直播</string>
+    <string name="topic_edit_hint">输入一个聊天话题</string>
+    <string name="need_necessary_permissions">缺少必要权限</string>
 
     <!-- Setting Activity -->
-    <string name="setting_title">Settings</string>
-    <string name="setting_resolution_title">Resolution</string>
-    <string name="setting_stats_title">Show video statistics</string>
-    <string name="setting_mirror_local_title">Local video preview mirror mode</string>
-    <string name="setting_mirror_remote_title">Remote video render mirror mode</string>
-    <string name="setting_mirror_encode_title">Local video encode mirror mode</string>
+    <string name="setting_title">设置</string>
+    <string name="setting_resolution_title">分辨率</string>
+    <string name="setting_stats_title">显示视频统计数据</string>
+
+    <!-- Role Choose Activity -->
+    <string name="select_role_title">请选择你的身份</string>
+    <string name="select_role_broadcaster">我是主播</string>
+    <string name="select_role_audience">我是观众</string>
+    <string name="select_role_broadcaster_hint">以主播身份进入</string>
+    <string name="select_role_audience_hint">以观众身份进入</string>
+    <string name="setting_mirror_encode_title">本地视频编码镜像模式</string>
+    <string name="setting_mirror_local_title">本地视频预览镜像模式</string>
+    <string name="setting_mirror_remote_title">远端视频渲染镜像模式</string>
 
     <string-array name="string_array_resolutions">
         <item>320x240</item>
@@ -28,12 +36,6 @@
     <!-- Live Activity -->
     <string name="fake_user_name" translatable="false">Shakespeare</string>
 
-    <!-- Role Choose Activity -->
-    <string name="select_role_title">Please choose your role</string>
-    <string name="select_role_broadcaster">Broadcaster</string>
-    <string name="select_role_audience">Audience</string>
-    <string name="select_role_broadcaster_hint">Join as broadcaster</string>
-    <string name="select_role_audience_hint">Join as audience</string>
 
     <!-- Legal digits for channel names -->
     <string name="legal_channel_name_characters" translatable="false">&#xA0;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&amp;()+,-:;&lt;=.>?@[]^_`{|}~</string>

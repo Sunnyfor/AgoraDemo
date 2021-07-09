@@ -1,30 +1,20 @@
-package io.agora.openlive.rtc;
+package io.agora.openlive.rtc
 
-import io.agora.rtc.IRtcEngineEventHandler;
+import io.agora.rtc.IRtcEngineEventHandler.*
 
-public interface EventHandler {
-    void onFirstRemoteVideoDecoded(int uid, int width, int height, int elapsed);
+interface EventHandler {
 
-    void onLeaveChannel(IRtcEngineEventHandler.RtcStats stats);
-
-    void onJoinChannelSuccess(String channel, int uid, int elapsed);
-
-    void onUserOffline(int uid, int reason);
-
-    void onUserJoined(int uid, int elapsed);
-
-    void onLastmileQuality(int quality);
-
-    void onLastmileProbeResult(IRtcEngineEventHandler.LastmileProbeResult result);
-
-    void onLocalVideoStats(IRtcEngineEventHandler.LocalVideoStats stats);
-
-    void onRtcStats(IRtcEngineEventHandler.RtcStats stats);
-
-    void onNetworkQuality(int uid, int txQuality, int rxQuality);
-
-    void onRemoteVideoStats(IRtcEngineEventHandler.RemoteVideoStats stats);
-
-    void onRemoteAudioStats(IRtcEngineEventHandler.RemoteAudioStats stats);
+    fun onFirstRemoteVideoDecoded(uid: Int, width: Int, height: Int, elapsed: Int)
+    fun onLeaveChannel(stats: RtcStats)
+    fun onJoinChannelSuccess(channel: String, uid: Int, elapsed: Int)
+    fun onUserOffline(uid: Int, reason: Int)
+    fun onUserJoined(uid: Int, elapsed: Int)
+    fun onLastMileQuality(quality: Int)
+    fun onLastMileProbeResult(result: LastmileProbeResult)
+    fun onLocalVideoStats(stats: LocalVideoStats)
+    fun onRtcStats(stats: RtcStats)
+    fun onNetworkQuality(uid: Int, txQuality: Int, rxQuality: Int)
+    fun onRemoteVideoStats(stats: RemoteVideoStats)
+    fun onRemoteAudioStats(stats: RemoteAudioStats)
 
 }

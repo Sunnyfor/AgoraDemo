@@ -14,13 +14,10 @@
             android:layout_width="@dimen/dp_27"
             android:layout_height="@dimen/dp_27"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="@dimen/dp_18"
-            android:layout_marginLeft="@dimen/dp_18"
             android:layout_marginBottom="@dimen/dp_12"
-            android:background="@drawable/btn_back_arrow"
-            android:onClick="onBackArrowPressed" />
+            android:background="@drawable/btn_back_arrow" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,29 +73,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp_28"
-            android:layout_marginLeft="@dimen/dp_28"
             android:text="@string/setting_stats_title"
             android:textColor="@color/gray_deep_dark"
             android:textSize="@dimen/sp_16" />
 
         <TextView
-            android:id="@+id/setting_stats_checkbox"
+            android:id="@+id/tv_cb_setting_stats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dp_28"
-            android:layout_marginRight="@dimen/dp_28"
-            android:background="@drawable/setting_switch"
-            android:onClick="onStatsChecked" />
+            android:background="@drawable/setting_switch" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/setting_mirror_local_view"
+        android:id="@+id/rl_setting_mirror_local_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_54"
         android:clickable="true"
@@ -106,27 +98,22 @@
         android:onClick="onClick">
 
         <TextView
-            android:id="@+id/setting_mirror_local_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp_28"
-            android:layout_marginLeft="@dimen/dp_28"
             android:text="@string/setting_mirror_local_title"
             android:textColor="@color/gray_deep_dark"
             android:textSize="@dimen/sp_16" />
 
         <TextView
-            android:id="@+id/setting_mirror_local_value"
+            android:id="@+id/tv_mirror_local"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/dp_28"
-            android:layout_marginRight="@dimen/dp_28" />
+            android:layout_marginEnd="@dimen/dp_28" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -142,23 +129,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp_28"
-            android:layout_marginLeft="@dimen/dp_28"
             android:text="@string/setting_mirror_remote_title"
             android:textColor="@color/gray_deep_dark"
             android:textSize="@dimen/sp_16" />
 
         <TextView
-            android:id="@+id/setting_mirror_remote_value"
+            android:id="@+id/tv_mirror_remote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/dp_28"
-            android:layout_marginRight="@dimen/dp_28" />
+            android:layout_marginEnd="@dimen/dp_28" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -174,22 +157,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp_28"
-            android:layout_marginLeft="@dimen/dp_28"
             android:text="@string/setting_mirror_encode_title"
             android:textColor="@color/gray_deep_dark"
             android:textSize="@dimen/sp_16" />
 
         <TextView
-            android:id="@+id/setting_mirror_encode_value"
+            android:id="@+id/tv_mirror_encode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/dp_28"
-            android:layout_marginRight="@dimen/dp_28" />
+            android:layout_marginEnd="@dimen/dp_28" />
     </RelativeLayout>
 </LinearLayout>

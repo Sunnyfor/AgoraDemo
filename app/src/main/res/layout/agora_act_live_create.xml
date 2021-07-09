@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/agora_bg_main">
+
+    <ImageView
+        android:id="@+id/iv_btn_setting"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:contentDescription="@string/placeholder"
+        android:src="@drawable/btn_setting" />
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/dp_158"
+            android:layout_height="@dimen/dp_158"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_48"
+            android:contentDescription="@string/placeholder"
+            android:scaleType="centerCrop"
+            android:src="@drawable/agora_ic_logo" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_logo"
+            android:layout_alignStart="@id/btn_start_live"
+            android:layout_alignEnd="@id/btn_start_live"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_42"
+            android:backgroundTint="@color/blue_alpha"
+            android:digits="@string/legal_channel_name_characters"
+            android:gravity="center"
+            android:hint="@string/topic_edit_hint"
+            android:lines="1"
+            android:paddingBottom="@dimen/dp_16"
+            android:textColor="@color/blue_alpha"
+            android:textColorHint="@color/blue_alpha"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/sp_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_start_live"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_below="@id/et_topic"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/start_broadcast_bg"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_45"
+            android:paddingEnd="@dimen/dp_45"
+            android:text="@string/start_broadcast_title"
+            android:textAlignment="gravity"
+            android:textAllCaps="false"
+            android:textColor="@color/sel_resolution_item_text_color"
+            android:textSize="@dimen/sp_18" />
+    </RelativeLayout>
+</RelativeLayout>

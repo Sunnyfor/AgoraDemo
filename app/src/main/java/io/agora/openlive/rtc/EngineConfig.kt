@@ -1,64 +1,28 @@
-package io.agora.openlive.rtc;
+package io.agora.openlive.rtc
 
-import io.agora.openlive.Constants;
+import io.agora.openlive.AgoraConstant
 
-public class EngineConfig {
-    // private static final int DEFAULT_UID = 0;
-    // private int mUid = DEFAULT_UID;
+/**
+ * Desc 配置工具类
+ * Author ZY
+ * Mail zuoyu98@foxmail.com
+ * Date 2021年7月9日 17:20:59
+ */
+class EngineConfig {
 
-    private String mChannelName;
-    private boolean mShowVideoStats;
-    private int mDimenIndex = Constants.DEFAULT_PROFILE_IDX;
-    private int mMirrorLocalIndex;
-    private int mMirrorRemoteIndex;
-    private int mMirrorEncodeIndex;
+    private var mShowVideoStats = false
 
+    var channelName: String? = null
+    var videoDimenIndex = AgoraConstant.DEFAULT_PROFILE_IDX
+    var mirrorLocalIndex = 0
+    var mirrorRemoteIndex = 0
+    var mirrorEncodeIndex = 0
 
-    public int getVideoDimenIndex() {
-        return mDimenIndex;
+    fun ifShowVideoStats(): Boolean {
+        return mShowVideoStats
     }
 
-    public void setVideoDimenIndex(int index) {
-        mDimenIndex = index;
-    }
-
-    public String getChannelName() {
-        return mChannelName;
-    }
-
-    public void setChannelName(String mChannel) {
-        this.mChannelName = mChannel;
-    }
-
-    public boolean ifShowVideoStats() {
-        return mShowVideoStats;
-    }
-
-    public void setIfShowVideoStats(boolean show) {
-        mShowVideoStats = show;
-    }
-
-    public int getMirrorLocalIndex() {
-        return mMirrorLocalIndex;
-    }
-
-    public void setMirrorLocalIndex(int index) {
-        mMirrorLocalIndex = index;
-    }
-
-    public int getMirrorRemoteIndex() {
-        return mMirrorRemoteIndex;
-    }
-
-    public void setMirrorRemoteIndex(int index) {
-        mMirrorRemoteIndex = index;
-    }
-
-    public int getMirrorEncodeIndex() {
-        return mMirrorEncodeIndex;
-    }
-
-    public void setMirrorEncodeIndex(int index) {
-        mMirrorEncodeIndex = index;
+    fun setIfShowVideoStats(show: Boolean) {
+        mShowVideoStats = show
     }
 }

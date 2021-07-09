@@ -1,58 +1,16 @@
-package io.agora.openlive.stats;
+package io.agora.openlive.stats
 
-public class StatsData {
-    private long uid;
-    private int width;
-    private int height;
-    private int framerate;
-    private String recvQuality;
-    private String sendQuality;
-
-    public long getUid() {
-        return uid;
-    }
-
-    public void setUid(long uid) {
-        this.uid = uid;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getFramerate() {
-        return framerate;
-    }
-
-    public void setFramerate(int framerate) {
-        this.framerate = framerate;
-    }
-
-    public String getRecvQuality() {
-        return recvQuality;
-    }
-
-    public void setRecvQuality(String recvQuality) {
-        this.recvQuality = recvQuality;
-    }
-
-    public String getSendQuality() {
-        return sendQuality;
-    }
-
-    public void setSendQuality(String sendQuality) {
-        this.sendQuality = sendQuality;
-    }
+/**
+ * Desc 直播数据统计
+ * Author ZY
+ * Mail zuoyu98@foxmail.com
+ * Date 2021年7月9日 16:35:42
+ */
+open class StatsData {
+    var uid: Long = 0
+    var width = 0
+    var height = 0
+    var framerate = 0
+    var recvQuality: String? = null
+    var sendQuality: String? = null
 }

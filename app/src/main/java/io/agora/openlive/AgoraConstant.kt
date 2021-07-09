@@ -5,7 +5,7 @@ import io.agora.rtc.video.BeautyOptions
 import io.agora.rtc.video.VideoEncoderConfiguration
 import io.agora.rtc.video.VideoEncoderConfiguration.VideoDimensions
 
-object Constants {
+object AgoraConstant {
     private const val BEAUTY_EFFECT_DEFAULT_CONTRAST = BeautyOptions.LIGHTENING_CONTRAST_NORMAL
     private const val BEAUTY_EFFECT_DEFAULT_LIGHTNESS = 0.7f
     private const val BEAUTY_EFFECT_DEFAULT_SMOOTHNESS = 0.5f
@@ -31,12 +31,15 @@ object Constants {
             Constants.VIDEO_MIRROR_MODE_ENABLED,
             Constants.VIDEO_MIRROR_MODE_DISABLED)
 
-    const val PREF_NAME = "io.agora.openlive"
+    fun fileAgora(): String {
+        return "sp_agora"
+    }
+
     const val DEFAULT_PROFILE_IDX = 2
-    const val PREF_RESOLUTION_IDX = "pref_profile_index"
-    const val PREF_ENABLE_STATS = "pref_enable_stats"
-    const val PREF_MIRROR_LOCAL = "pref_mirror_local"
-    const val PREF_MIRROR_REMOTE = "pref_mirror_remote"
-    const val PREF_MIRROR_ENCODE = "pref_mirror_encode"
-    const val KEY_CLIENT_ROLE = "key_client_role"
+    const val resolution_idx = "resolution_idx"
+    const val enable_stats = "enable_stats"
+    const val mirror_local = "mirror_local"
+    const val mirror_remote = "mirror_remote"
+    const val mirror_encode = "mirror_encode"
+
 }
