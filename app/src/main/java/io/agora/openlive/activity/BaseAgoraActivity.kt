@@ -42,7 +42,7 @@ abstract class BaseAgoraActivity : AppCompatActivity(), EventHandler {
         // same channel successfully using the same app id.
         // 2. One token is only valid for the channel name and uid that
         // you use to generate this token.
-        var token: String? = getString(R.string.private_access_token)
+        var token: String? = getString(R.string.agora_live_app_token)
         if (TextUtils.isEmpty(token) || TextUtils.equals(token, "#YOUR ACCESS TOKEN#")) {
             token = null
         }

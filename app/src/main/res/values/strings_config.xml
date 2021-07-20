@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="private_app_id" translatable="false">c4eb7402025a42618b34a84f18dd675c</string>
-    <string name="private_access_token" translatable="false">
+
+    <string name="agora_app_id" translatable="false">0198d494ace8458f833a93839c91119c</string>
+
+    <!--互动直播 Token-->
+
+    <string name="agora_live_app_token" translatable="false">
         006c4eb7402025a42618b34a84f18dd675cIADMwjZkOfGdcI+AyF8hQh62puR5eU2j4OT3sLS+/rYxyfST2vUAAAAAEABsKo0tRiHoYAEAAQBEIehg
     </string>
+
+    <!--云信令 Token-->
+
+    <string name="agora_rtm_app_token" translatable="false">
+
+        <!--6191-->
+<!--                0060198d494ace8458f833a93839c91119cIAAb4Kw//1pNEwUGiUY/4/BrT9Wxe7hh1E+MoGu6I+WaQ0Z6944AAAAAEACxzzpD5Xn3YAEA6APlefdg-->
+
+        <!--6292-->
+        0060198d494ace8458f833a93839c91119cIAAXLxYiYGOvVDIvZE5FxtOq1E7e4/HtX0hiq5Bj4AzMrqWVuBUAAAAAEACxzzpD+nn3YAEA6AP6efdg
+
+    </string>
+
 </resources>

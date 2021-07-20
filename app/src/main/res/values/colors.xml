@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+
+    <!--互动直播-->
     <color name="gray_lightest">#DEDEDE</color>
     <color name="gray_light">#CCCCCC</color>
     <color name="gray">#989898</color>
@@ -14,4 +16,20 @@
     <color name="dark_black">#CC262626</color>
     <color name="black_half_transparent">#66000000</color>
     <color name="black_full_transparent">#22000000</color>
+
+
+    <!--云信令-->
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white_ru">#D2E9FF</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="green">#4ACC60</color>
+    <color name="pink">#6A2290</color>
+    <color name="yellow">#FF7F24</color>
+    <color name="pink_dark">#4B0082</color>
+
 </resources>

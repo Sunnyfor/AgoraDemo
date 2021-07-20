@@ -8,16 +8,25 @@ import io.agora.openlive.stats.StatsManager
 import io.agora.openlive.utils.FileUtil
 import io.agora.openlive.utils.SpUtil
 import io.agora.rtc.RtcEngine
+import io.agora.rtm.rtmtutorial.ChatManager
 
 class MyApplication : Application() {
 
+    /**
+     * 互动直播
+     */
     private var mRtcEngine: RtcEngine? = null
     private val mGlobalConfig = EngineConfig()
     private val mHandler = AgoraEventHandler()
     private val mStatsManager = StatsManager()
 
+    /**
+     * 云信令
+     */
+    private var mChatManager: ChatManager? = null
+
     companion object {
-        lateinit var application: MyApplication
+       private lateinit var application: MyApplication
         fun getInstance(): MyApplication {
             return application
         }
@@ -28,12 +37,17 @@ class MyApplication : Application() {
         application = this
 
         try {
-            mRtcEngine = RtcEngine.create(applicationContext, getString(R.string.private_app_id), mHandler)
+            mRtcEngine = RtcEngine.create(applicationContext, getString(R.string.agora_app_id), mHandler)
             mRtcEngine?.setLogFile(FileUtil.initializeLogFile(this))
         } catch (e: Exception) {
             e.printStackTrace()
         }
         initConfig()
+
+
+        //云信令
+        mChatManager = ChatManager(this)
+        mChatManager?.init()
     }
 
     private fun initConfig() {
@@ -44,6 +58,11 @@ class MyApplication : Application() {
         mGlobalConfig.mirrorLocalIndex = SpUtil.get(AgoraConstant.fileAgora()).getInteger(AgoraConstant.mirror_local, 0)
         mGlobalConfig.mirrorRemoteIndex = SpUtil.get(AgoraConstant.fileAgora()).getInteger(AgoraConstant.mirror_remote, 0)
         mGlobalConfig.mirrorEncodeIndex = SpUtil.get(AgoraConstant.fileAgora()).getInteger(AgoraConstant.mirror_encode, 0)
+    }
+
+
+    fun getChatManager(): ChatManager? {
+        return mChatManager
     }
 
     fun engineConfig(): EngineConfig {
@@ -70,4 +89,6 @@ class MyApplication : Application() {
         super.onTerminate()
         RtcEngine.destroy()
     }
+
+
 }
