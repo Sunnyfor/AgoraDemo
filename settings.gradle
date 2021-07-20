@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "OpenLive-Android2"
+rootProject.name = "AgoraDemo"
